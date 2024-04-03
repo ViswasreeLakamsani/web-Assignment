@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <style>
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* Three equal-width columns */
+            gap: 10px; /* Gap between columns */
+        }
+
+        .column {
+            display: block;
+        }
+
+        .row1, .row2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 100px;
+            margin-right:60px ;
+        }
+
+        .row1 img {
+            width: 100%;
+            max-width: 250px;
+            height: 200px;
+            object-fit: cover;
+            margin-top: 20px;
+            margin-left:350px
+        }
+
+        .row2 img {
+            width: 100%;
+            max-width: 250px;
+            height: 420px;
+            margin-top: 20px;
+            margin-right: 100px;
+            margin-left:200px;
+        }
+
+        .Demo {
+            display: flex;
+            flex-direction: column;
+            background-color: #F05365;
+            width: 450px;
+            height: 220px;
+            margin-top: 250px;
+            margin-right:300px;
+            
+        }
+
+        /* Styling for the text */
+        #p3 {
+            margin-top: 10px;
+            font-size: 20px;
+            color: black;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        #p1 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: black;
+            font-size: 46px;
+            margin-top: 5px;
+            margin-bottom: 2px;
+            margin-left: 20px;
+        }
+
+        #p2 {
+            font-size: 16px;
+            color: black;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+        }
+
+        #p2 img {
+            width: 30px;
+            height: 30px;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        #p2 img.rotated {
+            transform: rotate(180deg);
+        }
+
+        body {
+            background: radial-gradient(circle, #ffcccc, #ffffcc);
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <div class="column">
+            <div class="row1">
+                <img src="https://images.pexels.com/photos/6752433/pexels-photo-6752433.jpeg" alt="Image 1">
+                <img src="https://images.pexels.com/photos/6141651/pexels-photo-6141651.jpeg?cs=srgb&dl=pexels-eva-bronzini-6141651.jpg&fm=jpg" alt="Image 2">
+            </div>
+        </div>
+        <div class="column">
+            <div class="row2">
+                <img src="https://sorrelapts.com/wp-content/uploads/2023/01/pexels-mister-mister-3434523.jpg" alt="Image 3">
+            </div>
+        </div>
+        <div class="column">
+            <div class="Demo">
+                <p id="p3">LOREM IPSUM</p>
+                <p id="p1">LOREM IPSUM SET ADEMIR</p>
+                <p id="p2" onclick="toggleArrow()">Click <img id="arrow" src="https://img.icons8.com/?size=50&id=39777&format=png"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleArrow() {
+            var arrowImg = document.getElementById('arrow');
+            arrowImg.classList.toggle('rotated');
+        }
+    </script>
+</body>
+</html>
